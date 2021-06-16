@@ -116,4 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Needed for git to sign commits
+export GPG_TTY=$(tty)
+
 neofetch
