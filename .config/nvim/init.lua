@@ -1,26 +1,44 @@
-require 'paq-nvim' {
-	'savq/paq-nvim';
+require 'dubu.load_plugins'
+require 'dubu.options'
 
-	'neovim/nvim-lspconfig';
-	'nvim-lua/completion-nvim';
-}
+-- statusbars
+require 'dubu.top_bufferline'
+require 'dubu.statusline'
 
+-- colorscheme
+require('colorizer').setup()
 
-local go = vim.o
-local bo = vim.bo
-local wo = vim.wo
+-- lsp
+require 'dubu.lspconfig_nvim'
+require 'dubu.compe_completion'
 
-go.swapfile		= true
-go.dir			= '/tmp'
-go.smartcase	= true
-go.laststatus	= 2
-go.hlsearch		= true
-go.incsearch	= true
-go.ignorecase	= true
+vim.g.mapleader = ' '
+vim.g.auto_save = 0
 
-wo.number		= true
-wo.wrap			= false
+vim.cmd('syntax on')
 
-go.tabstop		= 4
+local base16 = require 'base16'
+base16(base16.themes['onedark'], true)
 
+require 'dubu.highlights'
 
+vim.g.indentline_enabled = 1
+vim.g.indent_blankline_char = '▏'
+
+vim.g.indent_blankline_filetype_exclude = {'help', 'terminal', 'dashboard'}
+vim.g.indent_blankline_buftype_exclude = {'terminal'}
+
+vim.g.indent_blankline_show_trailing_blankline_indent = false
+vim.g.indent_blankline_show_first_indent_level = false
+
+require 'dubu.telescope_nvim'
+require 'dubu.nvim_tree'
+
+-- git signs, lsp symbols
+require 'dubu.gitsigns_nvim'
+require('nvim-autopairs').setup()
+require('lspkind').init()
+
+vim.api.nvim_exec('au BufEnter term://* setlocal nonumber', false)
+
+require 'dubu.dashboard'
