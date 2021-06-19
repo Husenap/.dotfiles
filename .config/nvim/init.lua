@@ -1,3 +1,5 @@
+require 'dubu.core'
+
 require 'dubu.load_plugins'
 require 'dubu.options'
 

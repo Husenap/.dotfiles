@@ -29,5 +29,6 @@ require 'paq-nvim' {
 
     -- misc
     'glepnir/dashboard-nvim';
+    'kabouzeid/nvim-lspinstall';
 }
 
