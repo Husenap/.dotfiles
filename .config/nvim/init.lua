@@ -32,7 +32,6 @@ require 'dubu.telescope_nvim'
 require 'dubu.nvim_tree'
 
 -- git signs, lsp symbols
-require 'dubu.gitsigns_nvim'
 require('nvim-autopairs').setup()
 require('lspkind').init()
 
