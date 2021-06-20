@@ -1,5 +1,9 @@
 local g = vim.g
 
+require('nvim-tree.events').on_nvim_tree_ready(function()
+    vim.cmd('NvimTreeRefresh')
+end)
+
 g.nvim_tree_side = "left"
 g.nvim_tree_width = 35
 g.nvim_tree_ignore = {".git", "node_modules", ".cache"}

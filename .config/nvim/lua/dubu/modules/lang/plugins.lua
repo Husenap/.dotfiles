@@ -11,4 +11,8 @@ M['nvim-treesitter/nvim-treesitter-textobjects'] = {
     after = 'nvim-treesitter'
 }
 
+M['windwp/nvim-autopairs'] = {
+    config = conf.nvim_autopairs
+}
+
 return M

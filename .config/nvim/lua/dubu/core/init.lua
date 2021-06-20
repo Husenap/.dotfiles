@@ -55,6 +55,8 @@ local function load_core()
 
     pack.ensure_plugins()
 
+    require('dubu.core.options')
+
     pack.load_compile()
 end
 

@@ -130,7 +130,7 @@ function plugins.load_compile()
     else
         assert('Missing packer compile file. Run PackerCompile or PackerInstall to fix.')
     end
-    
+
     vim.cmd [[command! PackerCompile lua require('dubu.core.pack').magic_compile()]]
     vim.cmd [[command! PackerInstall lua require('dubu.core.pack').install()]]
     vim.cmd [[command! PackerUpdate lua require('dubu.core.pack').update()]]

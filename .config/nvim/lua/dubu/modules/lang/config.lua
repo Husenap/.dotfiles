@@ -23,4 +23,8 @@ function M.nvim_treesitter()
     })
 end
 
+function M.nvim_autopairs()
+    require('nvim-autopairs').setup()
+end
+
 return M

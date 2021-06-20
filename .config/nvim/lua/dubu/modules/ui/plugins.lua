@@ -2,10 +2,6 @@ local conf = require 'dubu.modules.ui.config'
 
 local M = {}
 
-M['glepnir/dashboard-nvim'] = {
-    config = conf.dashboard
-}
-
 M['glepnir/galaxyline.nvim'] = {
     branch = 'main',
     config = conf.galaxyline,
@@ -24,7 +20,6 @@ M['akinsho/nvim-bufferline.lua'] = {
 }
 
 M['kyazdani42/nvim-tree.lua'] = {
-    cmd = {'NvimTreeToggle','NvimTreeOpen'},
     config = conf.nvim_tree,
     requires = 'kyazdani42/nvim-web-devicons'
 }
