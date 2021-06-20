@@ -4,7 +4,7 @@ local M = {}
 
 function M.dashboard()
     vim.g.dashboard_preview_command = 'cat'
-    vim.g.dashboard_preview_file = global.vim_path .. '/static/twice_logo.cat'
+    vim.g.dashboard_preview_file = os.getenv('HOME') .. '/.config/nvim/static/twice_logo.cat'
     vim.g.dashboard_preview_file_height = 37
     vim.g.dashboard_preview_file_width = 80
     vim.g.dashboard_default_executive = 'telescope'

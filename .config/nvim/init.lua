@@ -3,15 +3,10 @@ require 'dubu.core'
 require 'dubu.load_plugins'
 require 'dubu.options'
 
--- statusbars
-require 'dubu.top_bufferline'
-require 'dubu.statusline'
-
 -- colorscheme
 require('colorizer').setup()
 
 -- lsp
-require 'dubu.lspconfig_nvim'
 require 'dubu.compe_completion'
 
 vim.g.mapleader = ' '
@@ -42,5 +37,3 @@ require('nvim-autopairs').setup()
 require('lspkind').init()
 
 vim.api.nvim_exec('au BufEnter term://* setlocal nonumber', false)
-
-require 'dubu.dashboard'

@@ -3,7 +3,7 @@ local conf = require 'dubu.modules.ui.config'
 local M = {}
 
 M['glepnir/dashboard-nvim'] = {
-    config = conf.dashboard,
+    config = conf.dashboard
 }
 
 M['glepnir/galaxyline.nvim'] = {
