@@ -1,4 +1,6 @@
-function on_attach(client, bufnr)
+local M = {}
+
+function M.on_attach(client, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
@@ -30,14 +32,12 @@ local function setup_servers()
     for _, lang in pairs(servers) do
         if lang ~= "lua" then
             lspconf[lang].setup {
-                on_attach = on_attach,
+                on_attach = M.on_attach,
                 root_dir = vim.loop.cwd
             }
         elseif lang == "lua" then
             lspconf[lang].setup {
-                root_dir = function()
-                    return vim.loop.cwd()
-                end,
+                root_dir = vim.loop.cwd,
                 settings = {
                     Lua = {
                         diagnostics = {
@@ -73,3 +73,4 @@ vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagn
 vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
 vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
 
+return M
