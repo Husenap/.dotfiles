@@ -119,4 +119,6 @@ fi
 # Needed for git to sign commits
 export GPG_TTY=$(tty)
 
+export FZF_DEFAULT_OPTS='--tiebreak=end'
+
 neofetch
