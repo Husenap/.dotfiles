@@ -16,10 +16,10 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.clangd.setup {
-  on_attach = function(a, bufnr)
+  on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "<leader>df", vim.lsp.buf.hover, bufopts)
-    nvlsp.on_attach(a, bufnr)
+    nvlsp.on_attach(client, bufnr)
   end,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,

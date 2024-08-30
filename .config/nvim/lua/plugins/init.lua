@@ -17,10 +17,7 @@ return {
     config = function()
       require("telescope").setup {
         defaults = {
-          file_ignore_patterns = {
-            "venv",
-            "build",
-          },
+          file_ignore_patterns = { "venv", ".venv", "build", ".build" },
         },
       }
     end,
